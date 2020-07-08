@@ -1,0 +1,121 @@
+* {
+  font-family: "Roboto Mono",monospace;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  margin: 0; }
+
+body {
+  width: 100%; }
+
+li, li a {
+  text-decoration: none;
+  text-transform: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  display: inline-block;
+  color: #000000;
+  -webkit-tap-highlight-color: transparent; }
+
+.menu, nav {
+  clear: right;
+  background-color: #D06CFF;
+  width: 100%; }
+
+.menu li {
+  clear: right;
+  display: block;
+  padding: 10px;
+  background-color: #D06CFF; }
+  .menu li:hover {
+    background-color: #AE5BD5; }
+
+.menubtn {
+  display: none; }
+
+.menu-icon {
+  /* es el label del input checkbox*/
+  background-color: #D06CFF;
+  padding: 15px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; }
+
+.stick {
+  background-color: #000000;
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+  transition: background .2s ease-out; }
+
+.stick::before {
+  background: #000000;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  -webkit-tap-highlight-color: transparent;
+  top: 5px; }
+
+.stick::after {
+  background: #000000;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  -webkit-tap-highlight-color: transparent;
+  top: -5px; }
+
+.menu {
+  visibility: hidden;
+  height: 0;
+  transition: visibility 0s ease-out; }
+
+.menubtn:checked ~ .menu {
+  visibility: visible;
+  height: 170px; }
+
+.menubtn:checked ~ .menu-icon .stick {
+  background-color: transparent; }
+
+.menubtn:checked ~ .menu-icon .stick::before {
+  transform: rotate(-45deg);
+  top: 0; }
+
+.menubtn:checked ~ .menu-icon .stick::after {
+  transform: rotate(45deg);
+  top: 0; }
+
+@media screen and (min-width: 600px) {
+  .menu li a {
+    float: none;
+    display: inline; }
+
+  .menu li {
+    margin-left: 30px;
+    display: inline;
+    float: none;
+    padding: 0; }
+
+  .menu {
+    position: relative;
+    visibility: visible;
+    display: block;
+    background-color: #D06CFF; }
+
+  .menu-icon {
+    display: none; }
+
+  nav {
+    background-color: #D06CFF;
+    height: 40px; } }
+
+/*# sourceMappingURL=style.css.map */

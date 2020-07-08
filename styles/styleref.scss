@@ -1,0 +1,29 @@
+@import "variables";
+*{
+    padding: 0;
+    margin: 0;
+    outline:0;
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+}
+header{
+    height: 100px;
+}
+header img{
+    height: 100%;
+    width: 100%;
+}
+.intro{
+    height: 200px;
+    background-color: $ev-head;
+    display: flex;
+    justify-content: space-around;
+}
+.intro div h2{
+    font-family: $ev-titlesFont;
+}
+.cubes{
+    width: 50px;
+    height: 50px;
+    background-color:$ev-cubes;
+}

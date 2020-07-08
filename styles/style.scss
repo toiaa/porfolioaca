@@ -1,0 +1,111 @@
+@import "variables";
+@import "mixin";
+
+*{
+    font-family: "Roboto Mono",monospace;
+    padding: 0;
+    margin: 0;
+    outline:0;
+    margin:0;
+}
+body{
+    width: 100%;
+}
+li, li a{
+    text-decoration: none;
+    text-transform: none;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    display: inline-block;
+    color: $font_color;
+    @include stop-blue();
+}
+.menu, nav{
+    clear: right;
+    background-color: $menu_background;
+    width: 100%;
+}
+.menu li{
+    clear: right;
+    display: block;
+    padding: 10px;
+    background-color: $menu_background;
+    &:hover{
+        background-color: $menu_hover_back;
+    }
+}
+.menubtn{
+   display: none;
+}
+.menu-icon{ /* es el label del input checkbox*/
+    background-color: $menu_background;
+    padding: 15px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    @include stop-blue();
+}
+.stick{
+    background-color: $font_color;
+	display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+	transition:background .2s ease-out;
+}
+.stick::before{
+    @include stick-cross();
+    top: 5px;
+}
+.stick::after{
+    @include stick-cross();
+    top: -5px;
+}
+.menu {
+    visibility: hidden;
+    height: 0;
+    transition:  visibility 0s ease-out;
+}
+.menubtn:checked ~ .menu{
+    visibility: visible;
+    height: 170px;
+}
+.menubtn:checked ~ .menu-icon .stick{
+	background-color: transparent;
+}
+.menubtn:checked ~ .menu-icon .stick::before {
+	transform: rotate(-45deg);
+	top: 0;
+}
+.menubtn:checked ~ .menu-icon .stick::after{
+	transform: rotate(45deg);
+	top: 0;
+}
+
+@media screen and (min-width:600px){
+    .menu li a{
+        float: none;
+        display: inline;
+    }
+    .menu li{
+        margin-left: 30px;
+        display: inline;
+        float: none;
+        padding: 0;
+    }
+    .menu{
+        position: relative;
+        visibility: visible;
+        display: block;
+        background-color: $menu_background;
+    }
+    .menu-icon{
+        display: none;
+    }
+    nav{
+        background-color: $menu_background;
+        height: 40px;
+    }
+}

@@ -1,0 +1,24 @@
+@import "variables";
+
+@mixin stop-blue {
+    -webkit-tap-highlight-color: transparent;    
+}
+
+@mixin stick-cross{
+    background: $font_color;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+    transition:all .2s ease-out;
+    -webkit-tap-highlight-color: transparent;
+}
+@mixin cross-rotate-right{
+    transform: rotate(-45deg);
+    top: 0;
+}
+@mixin cross-rotate-left {
+    transform: rotate(45deg);
+	top: 0;
+}
